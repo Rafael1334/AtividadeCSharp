@@ -28,8 +28,6 @@ namespace Atividade.View
             "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN",
             "RS", "RO", "RR", "SC", "SP", "SE", "TO" };
 
-        private List<string> colunasTabela = new List<string> { "Logradouro", "Número", "Complemento", "Bairro", "Cidade", "Estado" };
-
         public Endereco()
         {
             InitializeComponent();
@@ -49,10 +47,11 @@ namespace Atividade.View
 
             if (!string.IsNullOrEmpty(valida))
             {
-                MessageBox.Show(valida);
+                MessageBox.Show(valida, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
+                controller.criaEndereco(logradouro, numero, complemento, bairro, cidade, estado);
                 insereDadosTabela();
                 btn_proximo.IsEnabled = true;
             }

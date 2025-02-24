@@ -52,7 +52,7 @@ namespace Atividade.View
 
             if (!string.IsNullOrEmpty(valida))
             {
-                MessageBox.Show(valida);
+                MessageBox.Show(valida, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {

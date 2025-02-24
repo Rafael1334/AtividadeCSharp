@@ -37,7 +37,12 @@ namespace Atividade.Model
 
         public bool validaLogradouro(string logradouro)
         {
-            return string.IsNullOrEmpty(logradouro);
+            return !string.IsNullOrEmpty(logradouro);
+        }
+
+        public override string ToString()
+        {
+            return $"{Logradouro}, {Numero} - {Bairro}, {Cidade}/{Estado}. Complemento: {Complemento}";
         }
     }
 }

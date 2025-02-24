@@ -42,5 +42,4 @@ E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\obj\Debug\net8.0-windows\View
 E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\obj\Debug\net8.0-windows\View\Telefone.g.cs
 E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\obj\Debug\net8.0-windows\View\Endereco.baml
 E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\obj\Debug\net8.0-windows\View\Telefone.baml
-E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\obj\Debug\net8.0-windows\View\Header.g.cs
-E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\obj\Debug\net8.0-windows\View\Header.baml
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\obj\Debug\net8.0-windows\Atividade.sourcelink.json

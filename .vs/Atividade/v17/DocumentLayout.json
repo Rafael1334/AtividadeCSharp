@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\view\\telefone.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\view\\telefone.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\controller\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\controller\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\model\\telefone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\model\\telefone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\view\\telefone.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\view\\telefone.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Telefone.xaml",
+              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\Telefone.xaml",
+              "RelativeDocumentMoniker": "Atividade\\View\\Telefone.xaml",
+              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\Telefone.xaml",
+              "RelativeToolTip": "Atividade\\View\\Telefone.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-24T19:57:24.889Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Telefone.xaml.cs",
+              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\Telefone.xaml.cs",
+              "RelativeDocumentMoniker": "Atividade\\View\\Telefone.xaml.cs",
+              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\Telefone.xaml.cs",
+              "RelativeToolTip": "Atividade\\View\\Telefone.xaml.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwEEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T19:57:42.179Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Telefone.cs",
+              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Model\\Telefone.cs",
+              "RelativeDocumentMoniker": "Atividade\\Model\\Telefone.cs",
+              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Model\\Telefone.cs",
+              "RelativeToolTip": "Atividade\\Model\\Telefone.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T20:05:22.107Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Controller.cs",
+              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Controller\\Controller.cs",
+              "RelativeDocumentMoniker": "Atividade\\Controller\\Controller.cs",
+              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Controller\\Controller.cs",
+              "RelativeToolTip": "Atividade\\Controller\\Controller.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwBQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T20:07:29.807Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

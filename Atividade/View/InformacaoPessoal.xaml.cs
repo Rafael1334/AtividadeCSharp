@@ -22,16 +22,19 @@ namespace Atividade.View
     /// </summary>
     public partial class InformacaoPessoal : Page
     {
+        Controller.Controller controller;
 
-        private Controller.Controller controller;
+
         private List<string> possiveisSexos = new List<string> { "Não Informar", "Masculino", "Feminino" };
         private List<string> possivelEscolaridade = new List<string> { "Não Informar", "Ensino Fundamental", "Ensino Médio", "Ensino Técnico", "Ensino Superior" };
 
-        public InformacaoPessoal()
+        public InformacaoPessoal(Controller.Controller controller)
         {
+            this.controller = controller;
             InitializeComponent();
             carregaComboBox();
-            MessageBox.Show(controller.pessoa.ToString());
+            MessageBox.Show(controller.getPessoa());
+            this.controller = controller;
         }
 
         private void dtP_DtNascimento_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
@@ -58,7 +61,7 @@ namespace Atividade.View
             else
             {
                 controller.criaPessoa(nome, cpf, rg, dtNascimento, sexo, profissao, escolaridade);
-                ((MainWindow)Application.Current.MainWindow).mudarTela("TELA2");
+                ((MainWindow)Application.Current.MainWindow).trocarTela("TELA2");
             }
         }
 

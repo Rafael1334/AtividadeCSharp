@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Atividade.Model;
 using Atividade.View;
 
 namespace Atividade
@@ -19,31 +20,34 @@ namespace Atividade
     {
 
         private Controller.Controller controller;
-        public const string telaInformacaoPessoal = "TELA1";
-        public const string telaEndereco= "TELA2";
-        public const string telaTelefone= "TELA3";
+        private Page pageInformacaoPessoa;
+        private Page pageEndereco;
+        private Page pageTelefone;
 
         public MainWindow()
         {
-            InitializeComponent();
-
             controller = new Controller.Controller();
+            pageInformacaoPessoa = new View.InformacaoPessoal(controller);
+            pageEndereco = new View.Endereco(controller);
+            pageTelefone = new View.Telefone(controller);
 
-            mudarTela(telaInformacaoPessoal);
+            InitializeComponent();
+            ((MainWindow)Application.Current.MainWindow).Content = pageInformacaoPessoa;
+
         }
 
-        public void mudarTela(string nomePagina)
+        public void trocarTela(string nomePagina)
         {
-            switch(nomePagina)
-            { 
-                case telaInformacaoPessoal:
-                    controller.trocarTela(telaInformacaoPessoal);
+            switch (nomePagina)
+            {
+                case "TELA1":
+                    ((MainWindow)Application.Current.MainWindow).Content = pageInformacaoPessoa;
                     break;
-                case telaEndereco:
-                    controller.trocarTela(telaEndereco);
+                case "TELA2":
+                    ((MainWindow)Application.Current.MainWindow).Content = pageEndereco;
                     break;
-                case telaTelefone:
-                    controller.trocarTela(telaTelefone);
+                case "TELA3":
+                    ((MainWindow)Application.Current.MainWindow).Content = pageTelefone;
                     break;
             }
         }

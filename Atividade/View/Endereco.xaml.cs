@@ -28,13 +28,13 @@ namespace Atividade.View
             "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN",
             "RS", "RO", "RR", "SC", "SP", "SE", "TO" };
 
-        public Endereco()
+        public Endereco(Controller.Controller controller)
         {
+            this.controller = controller;
             InitializeComponent();
             preencheDadosTela();
-            controller = new Controller.Controller();
-            MessageBox.Show(controller.pessoa.ToString());
-
+            MessageBox.Show(controller.getPessoa());
+            
         }
 
         private void btn_adicionarEndereco_Click(object sender, RoutedEventArgs e)
@@ -67,13 +67,13 @@ namespace Atividade.View
 
         private void btn_proximo_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)Application.Current.MainWindow).mudarTela("TELA3");
+            ((MainWindow)Application.Current.MainWindow).trocarTela("TELA3");
         }
 
         private void btn_voltar_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)Application.Current.MainWindow).mudarTela("TELA1");
-        } // Arrumar
+            ((MainWindow)Application.Current.MainWindow).trocarTela("TELA1");
+        }
 
         private void txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {

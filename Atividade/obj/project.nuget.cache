@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lYlp+4Di1GM=",
+  "dgSpecHash": "XIipb+xTL/w=",
   "success": true,
-  "projectFilePath": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Atividade.csproj",
+  "projectFilePath": "C:\\Users\\rodri\\Estudo\\Atividade4SecGlobal\\Atividade\\AtividadeCSharp\\Atividade\\Atividade.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rodri\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\rodri\\.nuget\\packages\\enums.net\\4.0.1\\enums.net.4.0.1.nupkg.sha512",

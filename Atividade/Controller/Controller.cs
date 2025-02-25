@@ -11,32 +11,21 @@ using NPOI.SS.Formula.Functions;
 
 namespace Atividade.Controller
 {
-    class Controller
+    public class Controller
     {
 
         private static ConnectionDb connectionDb = new ConnectionDb();
         PessoaDao pessoaDao = new PessoaDao(connectionDb);
 
-        public Pessoa pessoa;
+        private Pessoa pessoa;
 
-        private Page pageInformacaoPessoa = new View.InformacaoPessoal();
-        private Page pageEndereco = new View.Endereco();
-        private Page pageTelefone = new View.Telefone();
-
-        public void trocarTela(string nomePagina)
+        public string getPessoa()
         {
-            switch (nomePagina)
+            if(pessoa == null)
             {
-                case "TELA1":
-                    ((MainWindow)Application.Current.MainWindow).Content = pageInformacaoPessoa;
-                    break;
-                case "TELA2":
-                    ((MainWindow)Application.Current.MainWindow).Content = pageEndereco;
-                    break;
-                case "TELA3":
-                    ((MainWindow)Application.Current.MainWindow).Content = pageTelefone;
-                    break;
+                pessoa = new Pessoa();
             }
+            return pessoa.ToString();
         }
 
         //Pessoa

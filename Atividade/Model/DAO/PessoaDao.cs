@@ -17,7 +17,7 @@ namespace Atividade.Model.DAO
             this.connectionDb = connection;
         }
 
-        public void inserirPessoa(string nome, string cpf, string rg, string dataNascimento, string sexo, string profissao, string escolaridade)
+        public void inserirPessoa(Pessoa pessoa)
         {
             var conn = connectionDb.GetConnection();
 
@@ -25,13 +25,13 @@ namespace Atividade.Model.DAO
 
             var comando = new MySqlCommand("INSERT INTO pessoa (nome, cpf, rg, dataNascimento, sexo, profissao, escolaridade) " +
                 "VALUES (@nome, @cpf, @rg, @dataNascimento, @sexo, @profissao, @escolaridade)", conn);
-            comando.Parameters.AddWithValue("@nome", nome);
-            comando.Parameters.AddWithValue("@cpf", cpf);
-            comando.Parameters.AddWithValue("@rg", rg);
-            comando.Parameters.AddWithValue("@dataNascimento", dataNascimento);
-            comando.Parameters.AddWithValue("@sexo", sexo);
-            comando.Parameters.AddWithValue("@profissao", profissao);
-            comando.Parameters.AddWithValue("@escolaridade", escolaridade);
+            comando.Parameters.AddWithValue("@nome", pessoa.Nome);
+            comando.Parameters.AddWithValue("@cpf", pessoa.Cpf);
+            comando.Parameters.AddWithValue("@rg", pessoa.Rg);
+            comando.Parameters.AddWithValue("@dataNascimento", pessoa.DtNascimento);
+            comando.Parameters.AddWithValue("@sexo", pessoa.Sexo);
+            comando.Parameters.AddWithValue("@profissao", pessoa.Profissao);
+            comando.Parameters.AddWithValue("@escolaridade", pessoa.Escolaridade);
             comando.ExecuteNonQuery();
 
             conn.Close();

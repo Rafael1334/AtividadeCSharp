@@ -11,12 +11,12 @@ namespace Atividade.Model
     {
 
         private string nome;
-        private string cpf = "";
-        private string rg = "";
-        private string dtNascimento = "";
-        private string sexo = "";
-        private string profissao = "";
-        private string escolaridade = "";
+        private string cpf;
+        private string rg;
+        private string dtNascimento;
+        private string sexo;
+        private string profissao;
+        private string escolaridade;
         private List<Endereco> listEndereco = new List<Endereco>();
         private List<Telefone> listTelefone = new List<Telefone>();
 
@@ -51,7 +51,7 @@ namespace Atividade.Model
             listEndereco.Remove(endereco);
         }
 
-        public List<Endereco> GetEndereco { get => listEndereco; }
+        public List<Endereco> getListEndereco { get => listEndereco; }
 
         public void addItemTelefone(Telefone telefone)
         {
@@ -63,7 +63,7 @@ namespace Atividade.Model
             listTelefone.Remove(telefone);
         }
 
-        public List<Telefone> GetTelefone { get => listTelefone; }
+        public List<Telefone> getListTelefone { get => listTelefone; }
 
         public override string ToString()
         {

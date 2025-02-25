@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using Atividade.Model;
 using Atividade.Model.DAO;
 using NPOI.SS.Formula.Functions;
@@ -16,25 +17,24 @@ namespace Atividade.Controller
         private static ConnectionDb connectionDb = new ConnectionDb();
         PessoaDao pessoaDao = new PessoaDao(connectionDb);
 
-        private Pessoa pessoa;
+        public Pessoa pessoa;
 
-        public Controller()
-        {
-            pessoa = new Pessoa();
-        }
+        private Page pageInformacaoPessoa = new View.InformacaoPessoal();
+        private Page pageEndereco = new View.Endereco();
+        private Page pageTelefone = new View.Telefone();
 
         public void trocarTela(string nomePagina)
         {
             switch (nomePagina)
             {
                 case "TELA1":
-                    ((MainWindow)Application.Current.MainWindow).Content = new View.InformacaoPessoal();
+                    ((MainWindow)Application.Current.MainWindow).Content = pageInformacaoPessoa;
                     break;
                 case "TELA2":
-                    ((MainWindow)Application.Current.MainWindow).Content = new View.Endereco();
+                    ((MainWindow)Application.Current.MainWindow).Content = pageEndereco;
                     break;
                 case "TELA3":
-                    ((MainWindow)Application.Current.MainWindow).Content = new View.Telefone();
+                    ((MainWindow)Application.Current.MainWindow).Content = pageTelefone;
                     break;
             }
         }
@@ -137,7 +137,9 @@ namespace Atividade.Controller
 
         public void criaPessoa(string nome, string cpf, string rg, string dtNascimento, string sexo, string profissao, string escolaridade)
         {
-            Model.Pessoa novaPessoa = new Model.Pessoa(nome, cpf, rg, dtNascimento, sexo, profissao, escolaridade);
+            pessoa = new Model.Pessoa(nome, cpf, rg, dtNascimento, sexo, profissao, escolaridade);
+            MessageBox.Show(pessoa.ToString());
+            //pessoaDao.inserirPessoa(novaPessoa);
         }
 
 
@@ -169,8 +171,9 @@ namespace Atividade.Controller
         public void criaEndereco(string logradouro, string numero, string complemento, string bairro, string cidade, string estado)
         {
             Model.Endereco novoEndereco = new Model.Endereco(logradouro, numero, complemento, bairro, cidade, estado);
+            
             pessoa.addItemEndereco(novoEndereco);
-            atualizaTablelaEndereco(pessoa.GetEndereco);
+            atualizaTablelaEndereco(pessoa.getListEndereco);
         }
 
         private void atualizaTablelaEndereco(List<Endereco> lista)
@@ -211,9 +214,9 @@ namespace Atividade.Controller
 
         public void criaTelefone(string ddd, string numeroTelefone, string operadora)
         {
-            Model.Telefone novoTelefone = new Model.Telefone(ddd, numeroTelefone, operadora);
+            Model.Telefone novoTelefone = new Model.Telefone(ddd, numeroTelefone, operadora);            
             pessoa.addItemTelefone(novoTelefone);
-            atualizaTablelaTelefone(pessoa.GetTelefone);
+            atualizaTablelaTelefone(pessoa.getListTelefone);
         }
 
         private void atualizaTablelaTelefone(List<Telefone> lista)
@@ -239,13 +242,13 @@ namespace Atividade.Controller
         {
             string mensagemErro = "";
 
-            var enderecoVazio = listaVazia(pessoa.GetEndereco);
+            var enderecoVazio = listaVazia(pessoa.getListEndereco);
             if (enderecoVazio)
             {
                 mensagemErro += "Endereço: Lista vazia\n";
             }
 
-            var telefoneVazio = listaVazia(pessoa.GetTelefone);
+            var telefoneVazio = listaVazia(pessoa.getListTelefone);
             if (telefoneVazio)
             {
                 mensagemErro += "Telefone: Lista vazia\n";
@@ -262,7 +265,7 @@ namespace Atividade.Controller
 
         public void excluirDadosLista()
         {
-            //pessoa.removeItemEndereco();
+            
         } //Fazer
 
 

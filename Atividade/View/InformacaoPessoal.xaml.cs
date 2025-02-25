@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Atividade.Model;
 
 namespace Atividade.View
 {
@@ -30,7 +31,7 @@ namespace Atividade.View
         {
             InitializeComponent();
             carregaComboBox();
-            controller = new Controller.Controller();
+            MessageBox.Show(controller.pessoa.ToString());
         }
 
         private void dtP_DtNascimento_SelectedDateChanged(object sender, SelectionChangedEventArgs e)

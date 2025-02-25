@@ -33,6 +33,8 @@ namespace Atividade.View
             InitializeComponent();
             preencheDadosTela();
             controller = new Controller.Controller();
+            MessageBox.Show(controller.pessoa.ToString());
+
         }
 
         private void btn_adicionarEndereco_Click(object sender, RoutedEventArgs e)

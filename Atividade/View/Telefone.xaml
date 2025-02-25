@@ -13,21 +13,14 @@
         <Label Content="DDD:" HorizontalAlignment="Left" Margin="142,68,0,0" VerticalAlignment="Top"/>
         <TextBox Name="txt_DDD" HorizontalAlignment="Left" Margin="142,93,0,0" VerticalAlignment="Top" Width="175" MaxLength="3" PreviewTextInput="txt_PreviewTextInput"/>
 
-        <Label Content="Número:" HorizontalAlignment="Left" Margin="142,143,0,0" VerticalAlignment="Top"/>
+        <Label Content="Número do telefone:" HorizontalAlignment="Left" Margin="142,143,0,0" VerticalAlignment="Top"/>
         <TextBox Name="txt_NumeroTelefone" HorizontalAlignment="Left" Margin="142,168,0,0" VerticalAlignment="Top" Width="175" MaxLength="9" PreviewTextInput="txt_PreviewTextInput"/>
 
         <Label Content="Operadora:" HorizontalAlignment="Left" Margin="142,218,0,0" VerticalAlignment="Top"/>
         <TextBox Name="txt_Operadora" HorizontalAlignment="Left" Margin="142,243,0,0" VerticalAlignment="Top" Width="175"/>
 
 
-        <DataGrid Name="dtg_TabelaEndereco"  Height="300" Width="400" Margin="470,67,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="DDD"/>
-                <DataGridTextColumn Header="Número Telefone"/>
-                <DataGridTextColumn Header="Operadora"/>
-                
-            </DataGrid.Columns>
-        </DataGrid>
+        <DataGrid Name="dtg_TabelaTelefone"  Height="300" Width="400" Margin="470,67,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" AutoGenerateColumns="true"/>
 
         <Button Name="btn_adicionarTelefone"  Content="Adicionar" HorizontalAlignment="Left" Margin="263,298,0,0" VerticalAlignment="Top" Click="btn_adicionarTelefone_Click"/>
         <Button Name="btn_excluir" Content="Excluir" HorizontalAlignment="Left" Margin="470,381,0,0" VerticalAlignment="Top" Click="btn_excluir_Click"/>

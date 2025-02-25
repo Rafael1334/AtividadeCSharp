@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Atividade.Model;
 using Atividade.Model.DAO;
+using NPOI.SS.Formula.Functions;
 
 namespace Atividade.Controller
 {
@@ -15,32 +16,11 @@ namespace Atividade.Controller
         private static ConnectionDb connectionDb = new ConnectionDb();
         PessoaDao pessoaDao = new PessoaDao(connectionDb);
 
-        private Model.Pessoa pessoa = new Model.Pessoa();
+        private Pessoa pessoa;
 
-        private Model.Endereco endereco = new Model.Endereco();
-        private List<Endereco> listEndereco = new List<Endereco>();
-
-        private Model.Telefone telefone = new Model.Telefone();
-
-        public void criaPessoa(string nome, string cpf, string rg, string dtNascimento, int idade ,string sexo, string profissao, string escolaridade)
+        public Controller()
         {
-            Model.Pessoa novaPessoa = new Model.Pessoa(nome, cpf, rg, dtNascimento, idade, sexo, profissao, escolaridade);
-            MessageBox.Show(novaPessoa.ToString(), "Informações do Usuário", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
-        public void criaEndereco(string logradouro, string numero, string complemento, string bairro, string cidade, string estado )
-        {
-            Model.Endereco novoEndereco = new Model.Endereco(logradouro, numero, complemento, bairro, cidade, estado);
-            listEndereco.Add(novoEndereco);
-
-            string mensagem = string.Join("\n", listEndereco);
-            MessageBox.Show(mensagem, "Endereços Cadastrados", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
-        public void criaTelefone(string ddd, string numeroTelefone, string operadora)
-        {
-            Model.Telefone novoTelefone = new Model.Telefone(ddd, numeroTelefone, operadora);
-            
+            pessoa = new Pessoa();
         }
 
         public void trocarTela(string nomePagina)
@@ -59,44 +39,73 @@ namespace Atividade.Controller
             }
         }
 
+        //Pessoa
+
+        public bool validaNome(string nome)
+        {
+            return !string.IsNullOrEmpty(nome);
+        }
+
+        public bool IsCpf(string cpf)
+        {
+            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            string tempCpf;
+            string digito;
+            int soma;
+            int resto;
+
+            cpf = cpf.Trim();
+            cpf = cpf.Replace(".", "").Replace("-", "");
+
+            if (cpf.Length != 11)
+                return false;
+            tempCpf = cpf.Substring(0, 9);
+            soma = 0;
+
+            for (int i = 0; i < 9; i++)
+            {
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
+            }
+
+            resto = soma % 11;
+
+            if (resto < 2)
+            {
+                resto = 0;
+            }
+            else
+            {
+                resto = 11 - resto;
+            }
+            digito = resto.ToString();
+            tempCpf = tempCpf + digito;
+            soma = 0;
+            for (int i = 0; i < 10; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+            digito = digito + resto.ToString();
+            return cpf.EndsWith(digito);
+
+        }
+
         public string validacaoPessoa(string nome, string cpf)
         {
             string resultado = "";
 
-            if (!pessoa.validaNome(nome))
+            if (!validaNome(nome))
             {
                 resultado += "Nome; ";
             }
 
-            if (!pessoa.IsCpf(cpf))
+            if (!IsCpf(cpf))
             {
                 resultado += "Cpf; ";
             }
-
-            /*if (!pessoa.validaRg(rg))
-            {
-                resultado += "Rg; ";
-            }
-
-            if (!pessoa.validaDataNascimento(dtNascimento))
-            {
-                resultado += "Data de nascimento; ";
-            }
-
-            if (!pessoa.validaSexo(sexo))
-            {
-                resultado += "Sexo; ";
-            }
-
-            if (!pessoa.validaProfissao(profissao))
-            {
-                resultado += "Profissão; ";
-            }
-
-            if (!pessoa.validaEscolaridade(escolaridade))
-            {
-                resultado += "Escolaridade; ";
-            }*/
 
             if (!string.IsNullOrEmpty(resultado))
             {
@@ -106,12 +115,45 @@ namespace Atividade.Controller
             return resultado;
         }
 
+        public int calculaIdade(DateTime? dataNascimento)
+        {
+            DateTime hoje = DateTime.Now;
+
+            if (!dataNascimento.HasValue)
+            {
+                return -1;
+            }
+
+            DateTime dtNascimento = dataNascimento.Value;
+            int idade = hoje.Year - dtNascimento.Year;
+
+            if (hoje.Month < dtNascimento.Month || (hoje.Month == dtNascimento.Month && hoje.Day < dtNascimento.Day))
+            {
+                idade--;
+            }
+
+            return idade;
+        }
+
+        public void criaPessoa(string nome, string cpf, string rg, string dtNascimento, string sexo, string profissao, string escolaridade)
+        {
+            Model.Pessoa novaPessoa = new Model.Pessoa(nome, cpf, rg, dtNascimento, sexo, profissao, escolaridade);
+        }
+
+
+        //Endereço
+
+        public bool validaLogradouro(string logradouro)
+        {
+            return !string.IsNullOrEmpty(logradouro);
+        }
+
         public string validacaoEndereco(string logradouro)
         {
 
             string resultado = "";
 
-            if (!endereco.validaLogradouro(logradouro))
+            if (!validaLogradouro(logradouro))
             {
                 resultado += "Logradouro; ";
             }
@@ -124,11 +166,37 @@ namespace Atividade.Controller
             return resultado;
         }
 
+        public void criaEndereco(string logradouro, string numero, string complemento, string bairro, string cidade, string estado)
+        {
+            Model.Endereco novoEndereco = new Model.Endereco(logradouro, numero, complemento, bairro, cidade, estado);
+            pessoa.addItemEndereco(novoEndereco);
+            atualizaTablelaEndereco(pessoa.GetEndereco);
+        }
+
+        private void atualizaTablelaEndereco(List<Endereco> lista)
+        {
+            var paginaAtual = ((MainWindow)Application.Current.MainWindow).Content;
+
+            if (paginaAtual is View.Endereco paginaEndereco)
+            {
+                paginaEndereco.dtg_TabelaEndereco.ItemsSource = lista;
+            }
+        } // Verificar a parte da tabela
+
+
+
+        //Telefone
+
+        public bool validaTelefoneCelular(string telefoneCelular)
+        {
+            return !string.IsNullOrEmpty(telefoneCelular);
+        }
+
         public string validacaoTelefone(string telefoneCelular)
         {
             string resultado = "";
 
-            if (!telefone.validaTelefoneCelular(telefoneCelular))
+            if (!validaTelefoneCelular(telefoneCelular))
             {
                 resultado += "Telefone; ";
             }
@@ -140,6 +208,63 @@ namespace Atividade.Controller
 
             return resultado;
         }
+
+        public void criaTelefone(string ddd, string numeroTelefone, string operadora)
+        {
+            Model.Telefone novoTelefone = new Model.Telefone(ddd, numeroTelefone, operadora);
+            pessoa.addItemTelefone(novoTelefone);
+            atualizaTablelaTelefone(pessoa.GetTelefone);
+        }
+
+        private void atualizaTablelaTelefone(List<Telefone> lista)
+        {
+            var paginaAtual = ((MainWindow)Application.Current.MainWindow).Content;
+
+            if (paginaAtual is View.Telefone paginaTelefone)
+            {
+                paginaTelefone.dtg_TabelaTelefone.ItemsSource = lista;
+            }
+        } // Verificar a parte da tabela
+
+
+
+        //Geral
+
+        public bool listaVazia<T>(List<T> lista)
+        {
+            return lista == null || lista.Count == 0;
+        }
+
+        public string verificaListaVazia()
+        {
+            string mensagemErro = "";
+
+            var enderecoVazio = listaVazia(pessoa.GetEndereco);
+            if (enderecoVazio)
+            {
+                mensagemErro += "Endereço: Lista vazia\n";
+            }
+
+            var telefoneVazio = listaVazia(pessoa.GetTelefone);
+            if (telefoneVazio)
+            {
+                mensagemErro += "Telefone: Lista vazia\n";
+            }
+
+            return mensagemErro;
+        }
+
+
+        public void salvarDados()
+        {
+            
+        }
+
+        public void excluirDadosLista()
+        {
+            //pessoa.removeItemEndereco();
+        } //Fazer
+
 
     }
 

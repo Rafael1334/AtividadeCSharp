@@ -52,7 +52,6 @@ namespace Atividade.View
             else
             {
                 controller.criaEndereco(logradouro, numero, complemento, bairro, cidade, estado);
-                insereDadosTabela();
                 btn_proximo.IsEnabled = true;
             }
 
@@ -61,7 +60,8 @@ namespace Atividade.View
         private void btn_excluir_Click(object sender, RoutedEventArgs e)
         {
 
-        }
+            controller.excluirDadosLista();
+        } // Fazer
 
         private void btn_proximo_Click(object sender, RoutedEventArgs e)
         {
@@ -71,7 +71,7 @@ namespace Atividade.View
         private void btn_voltar_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)Application.Current.MainWindow).mudarTela("TELA1");
-        }
+        } // Arrumar
 
         private void txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -83,12 +83,13 @@ namespace Atividade.View
         {
             cb_Estado.ItemsSource = estadosBrasil;
         }
-    
-        private void insereDadosTabela()
+
+        private void dtg_TabelaEndereco_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (dtg_TabelaEndereco.SelectedItems.Count > 0) 
+            { 
+                btn_excluir.IsEnabled = true;
+            }
         }
-
-        
     }
 }

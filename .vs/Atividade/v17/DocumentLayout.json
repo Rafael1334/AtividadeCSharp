@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\model\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\model\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\controller\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\controller\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\view\\informacaopessoal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\view\\informacaopessoal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\view\\informacaopessoal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\view\\informacaopessoal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,46 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "InformacaoPessoal.xaml.cs",
-              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\InformacaoPessoal.xaml.cs",
-              "RelativeDocumentMoniker": "Atividade\\View\\InformacaoPessoal.xaml.cs",
-              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\InformacaoPessoal.xaml.cs",
-              "RelativeToolTip": "Atividade\\View\\InformacaoPessoal.xaml.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwD4AAAAAAAAAAAAAAA==",
+              "Title": "Controller.cs",
+              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Controller\\Controller.cs",
+              "RelativeDocumentMoniker": "Atividade\\Controller\\Controller.cs",
+              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Controller\\Controller.cs",
+              "RelativeToolTip": "Atividade\\Controller\\Controller.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAYwKsAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T21:58:28.781Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InformacaoPessoal.xaml",
-              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\InformacaoPessoal.xaml",
-              "RelativeDocumentMoniker": "Atividade\\View\\InformacaoPessoal.xaml",
-              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\InformacaoPessoal.xaml",
-              "RelativeToolTip": "Atividade\\View\\InformacaoPessoal.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-24T21:58:24.569Z",
+              "WhenOpened": "2025-02-24T23:12:00.532Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Controller.cs",
-              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Controller\\Controller.cs",
-              "RelativeDocumentMoniker": "Atividade\\Controller\\Controller.cs",
-              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Controller\\Controller.cs",
-              "RelativeToolTip": "Atividade\\Controller\\Controller.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAQwCIAAAAAAAAAAAAAAA==",
+              "Title": "Pessoa.cs",
+              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Model\\Pessoa.cs",
+              "RelativeDocumentMoniker": "Atividade\\Model\\Pessoa.cs",
+              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Model\\Pessoa.cs",
+              "RelativeToolTip": "Atividade\\Model\\Pessoa.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAawCsAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T21:59:32.113Z",
+              "WhenOpened": "2025-02-25T16:19:38.214Z",
               "EditorCaption": ""
             }
           ]

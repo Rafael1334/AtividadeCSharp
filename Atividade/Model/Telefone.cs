@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Atividade.Model
 {
     class Telefone
     {
 
-        private string ddd;
-        private string telefoneCelular;
-        private string operadora;
+        private string ddd = "";
+        private string telefoneCelular = "";
+        private string operadora = "";
 
         public Telefone() { }
 
@@ -26,9 +27,9 @@ namespace Atividade.Model
         public string TelefoneCelular { get => telefoneCelular; set => telefoneCelular = value; }
         public string Operadora { get => operadora; set => operadora = value; }
 
-        public bool validaTelefoneCelular(string telefoneCelular)
+        public override string ToString()
         {
-            return string.IsNullOrEmpty(telefoneCelular);
+            return $"({Ddd}) {TelefoneCelular} - {Operadora}";
         }
 
     }

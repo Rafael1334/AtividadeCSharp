@@ -35,7 +35,7 @@ namespace Atividade.View
 
         private void dtP_DtNascimento_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            txt_Idade.Text = calculaIdade().ToString();
+            txt_Idade.Text = controller.calculaIdade(dtP_DtNascimento.SelectedDate).ToString();
         }
 
         private void btn_proximo_Click(object sender, RoutedEventArgs e)
@@ -48,7 +48,7 @@ namespace Atividade.View
             string profissao = txt_Profissao.Text.Trim();
             string escolaridade = cb_Escolaridade.Text.Trim();
             string valida = controller.validacaoPessoa(nome, cpf);
-            int idade = calculaIdade();
+            int idade = controller.calculaIdade(dtP_DtNascimento.SelectedDate);
 
             if (!string.IsNullOrEmpty(valida))
             {
@@ -56,7 +56,7 @@ namespace Atividade.View
             }
             else
             {
-                controller.criaPessoa(nome, cpf, rg, dtNascimento, idade, sexo, profissao, escolaridade);
+                controller.criaPessoa(nome, cpf, rg, dtNascimento, sexo, profissao, escolaridade);
                 ((MainWindow)Application.Current.MainWindow).mudarTela("TELA2");
             }
         }
@@ -65,27 +65,6 @@ namespace Atividade.View
         {
             cb_Sexo.ItemsSource =  possiveisSexos;
             cb_Escolaridade.ItemsSource =  possivelEscolaridade;
-        }
-
-        private int calculaIdade()
-        {
-
-            DateTime hoje = DateTime.Now;
-            
-            if (!dtP_DtNascimento.SelectedDate.HasValue)
-            {
-                return -1;
-            }
-
-            DateTime dtNascimento = dtP_DtNascimento.SelectedDate.Value;
-            int idade = hoje.Year - dtNascimento.Year;
-
-            if (hoje.Month < dtNascimento.Month || (hoje.Month == dtNascimento.Month && hoje.Day < dtNascimento.Day))
-            {
-                idade--;
-            }
-
-            return idade;
         }
 
         private void txt_PreviewTextInput(object sender, TextCompositionEventArgs e)

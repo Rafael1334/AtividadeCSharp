@@ -9,12 +9,12 @@ namespace Atividade.Model
     class Endereco
     {
 
-        private string logradouro;
-        private string numero;
-        private string complemento;
-        private string bairro;
-        private string cidade;
-        private string estado;
+        private string logradouro = "";
+        private string numero = "";
+        private string complemento = "";
+        private string bairro = "";
+        private string cidade = "";
+        private string estado = "";
 
         public Endereco() { }
 
@@ -33,12 +33,7 @@ namespace Atividade.Model
         public string Complemento { get => complemento; set => complemento = value; }
         public string Bairro { get => bairro; set => bairro = value; }
         public string Cidade { get => cidade; set => cidade = value; }
-        public string Estado { get => estado; set => estado = value; }
-
-        public bool validaLogradouro(string logradouro)
-        {
-            return !string.IsNullOrEmpty(logradouro);
-        }
+        public string Estado { get => estado; set => estado = value; }        
 
         public override string ToString()
         {

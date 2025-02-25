@@ -11,124 +11,63 @@ namespace Atividade.Model
     {
 
         private string nome;
-        private string cpf;
-        private string rg;
-        private string dtNascimento;
-        private int idade;
-        private string sexo;
-        private string profissao;
-        private string escolaridade;
-        private List<Endereco> listEndereco;
-        private List<Telefone> listTelefone;
+        private string cpf = "";
+        private string rg = "";
+        private string dtNascimento = "";
+        private string sexo = "";
+        private string profissao = "";
+        private string escolaridade = "";
+        private List<Endereco> listEndereco = new List<Endereco>();
+        private List<Telefone> listTelefone = new List<Telefone>();
 
-        public Pessoa()
-        {
+        public Pessoa() { }
 
-        }
-
-        public Pessoa(string nome, string cpf, string rg, string dtNascimento, int idade,string sexo, string profissao, string escolaridade)
+        public Pessoa(string nome, string cpf, string rg, string dtNascimento, string sexo, string profissao, string escolaridade)
         {
             this.nome = nome;
             this.cpf = cpf;
             this.rg = rg;
             this.dtNascimento = dtNascimento;
-            this.idade = idade;
             this.sexo = sexo;
             this.profissao = profissao;
             this.escolaridade = escolaridade;
-            this.listEndereco = new List<Endereco>();
-            this.listTelefone = new List<Telefone>();
         }
 
         public string Nome { get => nome; set => nome = value; }
         public string Cpf { get => cpf; set => cpf = value; }
         public string Rg { get => rg; set => rg = value; }
         public string DtNascimento { get => dtNascimento; set => dtNascimento = value; }
-        public int Idade { get => idade; set => idade = value; }
         public string Sexo { get => sexo; set => sexo = value; }
         public string Profissao { get => profissao; set => profissao = value; }
         public string Escolaridade { get => escolaridade; set => escolaridade = value; }
 
-        public bool validaNome(string nome)
+        public void addItemEndereco(Endereco endereco)
         {
-            return !string.IsNullOrEmpty(nome);
+            listEndereco.Add(endereco);
         }
 
-        public bool IsCpf(string cpf)
+        public void removeItemEndereco(Endereco endereco)
         {
-            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            string tempCpf;
-            string digito;
-            int soma;
-            int resto;
-
-            cpf = cpf.Trim();
-            cpf = cpf.Replace(".", "").Replace("-", "");
-
-            if (cpf.Length != 11)
-                return false;
-            tempCpf = cpf.Substring(0, 9);
-            soma = 0;
-
-            for (int i = 0; i < 9; i++)
-            {
-                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
-            }
-
-            resto = soma % 11;
-
-            if (resto < 2)
-            {
-                resto = 0;
-            }
-            else
-            {
-                resto = 11 - resto;
-            }
-            digito = resto.ToString();
-            tempCpf = tempCpf + digito;
-            soma = 0;
-            for (int i = 0; i < 10; i++)
-                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
-            resto = soma % 11;
-            if (resto < 2)
-                resto = 0;
-            else
-                resto = 11 - resto;
-            digito = digito + resto.ToString();
-            return cpf.EndsWith(digito);
-
+            listEndereco.Remove(endereco);
         }
 
-        /*public bool validaRg(string rg)
+        public List<Endereco> GetEndereco { get => listEndereco; }
+
+        public void addItemTelefone(Telefone telefone)
         {
-            return !string.IsNullOrEmpty(rg);
+            listTelefone.Add(telefone);
         }
 
-        public bool validaDataNascimento(string dtNascimento)
+        public void RemoveItemTelefone(Telefone telefone)
         {
-            return !string.IsNullOrEmpty(dtNascimento);
+            listTelefone.Remove(telefone);
         }
 
-        public bool validaSexo(string sexo)
-        {
-            return !string.IsNullOrEmpty(sexo);
-        }
-
-        public bool validaProfissao(string profissao)
-        {
-            return !string.IsNullOrEmpty(profissao);
-        }
-
-        public bool validaEscolaridade(string escolaridade)
-        {
-            return !string.IsNullOrEmpty(escolaridade);
-        }*/
+        public List<Telefone> GetTelefone { get => listTelefone; }
 
         public override string ToString()
         {
-            return $"Nome: {Nome}\nCPF: {Cpf} - RG: {Rg}\nData Nascimento:{DtNascimento} - Idade: {Idade}" +
+            return $"Nome: {Nome}\nCPF: {Cpf} - RG: {Rg}\nData Nascimento:{DtNascimento}" +
                 $"\nSexo: {Sexo}\nProfissão: {Profissao}\nEscolaridade: {Escolaridade}";
         }
 

@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="9.2.0" />
+    <PackageReference Include="NPOI" Version="2.7.2" />
   </ItemGroup>
 
 </Project>

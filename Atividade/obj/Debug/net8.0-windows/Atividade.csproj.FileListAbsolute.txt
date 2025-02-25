@@ -43,3 +43,17 @@ E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\obj\Debug\net8.0-windows\View
 E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\obj\Debug\net8.0-windows\View\Endereco.baml
 E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\obj\Debug\net8.0-windows\View\Telefone.baml
 E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\obj\Debug\net8.0-windows\Atividade.sourcelink.json
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\Enums.NET.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\ExtendedNumerics.BigDecimal.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\MathNet.Numerics.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\NPOI.Core.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\NPOI.OOXML.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\NPOI.OpenXml4Net.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\NPOI.OpenXmlFormats.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\ICSharpCode.SharpZipLib.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\SixLabors.Fonts.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\SixLabors.ImageSharp.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\System.Security.Cryptography.Xml.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

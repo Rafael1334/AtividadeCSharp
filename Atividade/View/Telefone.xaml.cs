@@ -23,57 +23,57 @@ namespace Atividade.View
     {
 
         Controller.Controller controller;
-        List<Telefone> novoTelefone;
 
 
         public Telefone()
         {
             InitializeComponent();
             controller = new Controller.Controller();
-            novoTelefone = new List<Telefone>();
+            btn_salvar.IsEnabled = true;
         }
 
         private void btn_salvar_Click(object sender, RoutedEventArgs e)
         {
-            
+            string mensagemErro = controller.verificaListaVazia();
+
+            if (!string.IsNullOrEmpty(mensagemErro))
+            {
+                MessageBox.Show(mensagemErro, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+            } else
+            {
+                controller.salvarDados();
+            }
         }
 
         private void btn_voltar_Click(object sender, RoutedEventArgs e)
         {
-
-        }
+            ((MainWindow)Application.Current.MainWindow).mudarTela("TELA2");
+        } //Arrumar
 
         private void btn_excluir_Click(object sender, RoutedEventArgs e)
         {
 
-        }
+        } //Fazer
 
         private void btn_adicionarTelefone_Click(object sender, RoutedEventArgs e)
         {
             string ddd = txt_DDD.Text.Trim();
             string numero = txt_NumeroTelefone.Text.Trim();
             string operadora = txt_Operadora.Text.Trim();
-            string valida = controller.validacaoEndereco(numero);
+            string valida = controller.validacaoTelefone(numero);
 
             if (!string.IsNullOrEmpty(valida))
             {
-                MessageBox.Show(valida);
+                MessageBox.Show(valida, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
                 controller.criaTelefone(ddd, numero, operadora);
-                //novoTelefone = controller.telefones;
-                insereDadosTabela();
                 btn_salvar.IsEnabled = true;
             }
+            
 
         }
-
-        private void insereDadosTabela()
-        {
-
-        }
-
 
         private void txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {

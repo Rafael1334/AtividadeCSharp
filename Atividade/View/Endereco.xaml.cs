@@ -33,8 +33,6 @@ namespace Atividade.View
             this.controller = controller;
             InitializeComponent();
             preencheDadosTela();
-            MessageBox.Show(controller.getPessoa());
-            
         }
 
         private void btn_adicionarEndereco_Click(object sender, RoutedEventArgs e)
@@ -61,9 +59,9 @@ namespace Atividade.View
 
         private void btn_excluir_Click(object sender, RoutedEventArgs e)
         {
+            controller.removerDadosTabela();
 
-            controller.excluirDadosLista();
-        } // Fazer
+        }
 
         private void btn_proximo_Click(object sender, RoutedEventArgs e)
         {
@@ -88,9 +86,25 @@ namespace Atividade.View
 
         private void dtg_TabelaEndereco_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (dtg_TabelaEndereco.SelectedItems.Count > 0) 
-            { 
+            if (dtg_TabelaEndereco.SelectedItems.Count > 0)
+            {
+                string dados = Convert.ToString(dtg_TabelaEndereco.SelectedItem);
+
+                string[] recebeDados = dados.Split(';');
+
+
+                txt_Logradouro.Text = recebeDados[0].Trim();
+                txt_Numero.Text = recebeDados[1].Trim();
+                txt_Complemento.Text = recebeDados[2].Trim();
+                txt_Bairro.Text = recebeDados[3].Trim();
+                txt_Cidade.Text = recebeDados[4].Trim();
+                cb_Estado.SelectedItem = recebeDados[5].Trim();
+
+                controller.receberDadosTabelaEndereco(recebeDados[0], recebeDados[1], recebeDados[2], recebeDados[3], recebeDados[4], 
+                    recebeDados[5]);
+
                 btn_excluir.IsEnabled = true;
+
             }
         }
     }

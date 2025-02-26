@@ -18,9 +18,30 @@ namespace Atividade.Model.DAO
             this.connectionDb = connection;
         }
 
-        public void inserirEndereco()
+        public void inserirEndereco(List<Endereco> listEndereco, int id)
         {
+            var conn = connectionDb.GetConnection();
 
+            conn.Open();
+
+            var comando = new MySqlCommand("INSERT INTO endereco (id_pessoa, logradouro, numeroCasa, complemento, bairro, cidade, estado)" +
+                "VALUES (@id_pessoa, @logradouro, @numeroCasa, @complemento, @bairro, @cidade, @estado)", conn);
+
+            foreach (var endereco in listEndereco)
+            {
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("@id_pessoa", id);
+                comando.Parameters.AddWithValue("@logradouro", endereco.Logradouro);
+                comando.Parameters.AddWithValue("@numeroCasa", endereco.Numero);
+                comando.Parameters.AddWithValue("@complemento", endereco.Complemento);
+                comando.Parameters.AddWithValue("@bairro", endereco.Bairro);
+                comando.Parameters.AddWithValue("@cidade", endereco.Cidade);
+                comando.Parameters.AddWithValue("@estado", endereco.Estado);
+
+                comando.ExecuteNonQuery();
+            }
+
+            conn.Close();
         }
 
         public DataTable listar()
@@ -37,6 +58,17 @@ namespace Atividade.Model.DAO
 
             return dt;
 
+        }
+
+        public void listaPessoa()
+        {
+            var conn = connectionDb.GetConnection();
+            conn.Open();
+
+            var comando = new MySqlCommand("SELECT * FROM pessoa");
+            comando.ExecuteNonQuery();
+
+            conn.Close();
         }
 
     }

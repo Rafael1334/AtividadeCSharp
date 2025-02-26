@@ -17,8 +17,8 @@ namespace Atividade.Model
         private string sexo;
         private string profissao;
         private string escolaridade;
-        private List<Endereco> listEndereco = new List<Endereco>();
-        private List<Telefone> listTelefone = new List<Telefone>();
+        private List<Endereco> listEndereco;
+        private List<Telefone> listTelefone;
 
         public Pessoa() { }
 
@@ -31,6 +31,9 @@ namespace Atividade.Model
             this.sexo = sexo;
             this.profissao = profissao;
             this.escolaridade = escolaridade;
+            listEndereco = new List<Endereco>();
+            listTelefone = new List<Telefone>();
+
         }
 
         public string Nome { get => nome; set => nome = value; }

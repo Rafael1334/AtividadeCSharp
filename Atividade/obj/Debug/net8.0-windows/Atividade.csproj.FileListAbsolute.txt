@@ -116,3 +116,4 @@ C:\Users\rodri\Estudo\Atividade4SecGlobal\Atividade\AtividadeCSharp\Atividade\ob
 C:\Users\rodri\Estudo\Atividade4SecGlobal\Atividade\AtividadeCSharp\Atividade\obj\Debug\net8.0-windows\Atividade.csproj.Up2Date
 C:\Users\rodri\Estudo\Atividade4SecGlobal\Atividade\AtividadeCSharp\Atividade\obj\Debug\net8.0-windows\Atividade.genruntimeconfig.cache
 C:\Users\rodri\Estudo\Atividade4SecGlobal\Atividade\AtividadeCSharp\Atividade\obj\Debug\net8.0-windows\ref\Atividade.dll
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\bin\Debug\net8.0-windows\Newtonsoft.Json.dll

@@ -10,9 +10,9 @@ namespace Atividade.Model
     class Telefone
     {
 
-        private string ddd = "";
-        private string telefoneCelular = "";
-        private string operadora = "";
+        private string ddd;
+        private string telefoneCelular;
+        private string operadora;
 
         public Telefone() { }
 

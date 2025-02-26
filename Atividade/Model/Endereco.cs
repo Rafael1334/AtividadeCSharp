@@ -9,12 +9,12 @@ namespace Atividade.Model
     class Endereco
     {
 
-        private string logradouro = "";
-        private string numero = "";
-        private string complemento = "";
-        private string bairro = "";
-        private string cidade = "";
-        private string estado = "";
+        private string logradouro;
+        private string numero;
+        private string complemento;
+        private string bairro;
+        private string cidade;
+        private string estado;
 
         public Endereco() { }
 
@@ -37,7 +37,7 @@ namespace Atividade.Model
 
         public override string ToString()
         {
-            return $"{Logradouro}, {Numero} - {Bairro}, {Cidade}/{Estado}. Complemento: {Complemento}";
+            return $"{Logradouro};{Numero};{Complemento};{Bairro};{Cidade};{Estado}";
         }
     }
 }

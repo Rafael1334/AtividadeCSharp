@@ -32,9 +32,7 @@ namespace Atividade.View
         {
             this.controller = controller;
             InitializeComponent();
-            carregaComboBox();
-            MessageBox.Show(controller.getPessoa());
-            this.controller = controller;
+            preencheDadosTela();
         }
 
         private void dtP_DtNascimento_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
@@ -65,7 +63,7 @@ namespace Atividade.View
             }
         }
 
-        private void carregaComboBox()
+        private void preencheDadosTela()
         {
             cb_Sexo.ItemsSource =  possiveisSexos;
             cb_Escolaridade.ItemsSource =  possivelEscolaridade;

@@ -7,6 +7,8 @@ using System.Windows;
 using System.Windows.Controls;
 using Atividade.Model;
 using Atividade.Model.DAO;
+using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using NPOI.SS.Formula.Functions;
 
 namespace Atividade.Controller
@@ -16,17 +18,14 @@ namespace Atividade.Controller
 
         private static ConnectionDb connectionDb = new ConnectionDb();
         PessoaDao pessoaDao = new PessoaDao(connectionDb);
+        EnderecoDao enderecoDao = new EnderecoDao(connectionDb);
+        TelefoneDao telefoneDao = new TelefoneDao(connectionDb);
 
         private Pessoa pessoa;
+        private Endereco removerEndereco;
 
-        public string getPessoa()
-        {
-            if(pessoa == null)
-            {
-                pessoa = new Pessoa();
-            }
-            return pessoa.ToString();
-        }
+
+        private List<Pessoa> listPessoa;
 
         //Pessoa
 
@@ -127,8 +126,15 @@ namespace Atividade.Controller
         public void criaPessoa(string nome, string cpf, string rg, string dtNascimento, string sexo, string profissao, string escolaridade)
         {
             pessoa = new Model.Pessoa(nome, cpf, rg, dtNascimento, sexo, profissao, escolaridade);
-            MessageBox.Show(pessoa.ToString());
-            //pessoaDao.inserirPessoa(novaPessoa);
+        }
+
+        public string getPessoa()
+        {
+            if (pessoa == null)
+            {
+                pessoa = new Pessoa();
+            }
+            return pessoa.ToString();
         }
 
 
@@ -159,8 +165,7 @@ namespace Atividade.Controller
 
         public void criaEndereco(string logradouro, string numero, string complemento, string bairro, string cidade, string estado)
         {
-            Model.Endereco novoEndereco = new Model.Endereco(logradouro, numero, complemento, bairro, cidade, estado);
-            
+            Model.Endereco novoEndereco = new Model.Endereco(logradouro, numero, complemento, bairro, cidade, estado); 
             pessoa.addItemEndereco(novoEndereco);
             atualizaTablelaEndereco(pessoa.getListEndereco);
         }
@@ -249,13 +254,41 @@ namespace Atividade.Controller
 
         public void salvarDados()
         {
-            
+            int ultimoIdInt;
+
+            try
+            {
+                pessoaDao.inserirPessoa(pessoa);
+                ultimoIdInt = pessoaDao.selecionarUltimoId();
+                enderecoDao.inserirEndereco(pessoa.getListEndereco, ultimoIdInt);
+                telefoneDao.inserirTelefone(pessoa.getListTelefone, ultimoIdInt);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Erro: CPF já cadastrado", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
 
-        public void excluirDadosLista()
+        public void receberDadosTabelaEndereco(string logradouro, string numero, string complemento, string bairro, string cidade, string estado)
         {
+            removerEndereco = new Endereco(logradouro, numero, complemento, bairro, cidade, estado); 
+        } 
+
+        public void removerDadosTabela()
+        {
+            pessoa.removeItemEndereco(removerEndereco);
+        }
+
+        public void transformaJson()
+        {
+            var meuJson = JsonConvert.SerializeObject(pessoa);
             
-        } //Fazer
+            MessageBox.Show(meuJson);
+
+            //var meuObjetoJson = JsonConvert.DeserializeObject<Pessoa>(meuJson);
+            //MessageBox.Show(meuObjetoJson.ToString());
+        }
 
 
     }

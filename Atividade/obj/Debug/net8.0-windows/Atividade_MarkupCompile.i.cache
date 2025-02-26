@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\rodri\Estudo\Atividade4SecGlobal\Atividade\AtividadeCSharp\Atividade\obj\Debug\net8.0-windows\
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\obj\Debug\net8.0-windows\
 Atividade
 none
 false
-TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\rodri\Estudo\Atividade4SecGlobal\Atividade\AtividadeCSharp\Atividade\App.xaml
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP
+E:\1ESTUDO\Exercicio4SecGlobal\Atividade\Atividade\App.xaml
 41287833321
 
-16-815583374
-2171314545439
+17621616820
+218-1575833194
 MainWindow.xaml;View\Endereco.xaml;View\InformacaoPessoal.xaml;View\Telefone.xaml;
 
-True
+False
 

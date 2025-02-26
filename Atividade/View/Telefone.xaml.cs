@@ -27,9 +27,8 @@ namespace Atividade.View
 
         public Telefone(Controller.Controller controller)
         {
-            InitializeComponent();
-            btn_salvar.IsEnabled = true;
             this.controller = controller;
+            InitializeComponent();
         }
 
         private void btn_salvar_Click(object sender, RoutedEventArgs e)
@@ -42,13 +41,14 @@ namespace Atividade.View
             } else
             {
                 controller.salvarDados();
+                controller.transformaJson();
             }
         }
 
         private void btn_voltar_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)Application.Current.MainWindow).trocarTela("TELA2");
-        } //Arrumar
+        }
 
         private void btn_excluir_Click(object sender, RoutedEventArgs e)
         {

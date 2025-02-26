@@ -22,6 +22,7 @@ namespace Atividade.Model.DAO
             var conn = connectionDb.GetConnection();
 
             conn.Open();
+           
 
             var comando = new MySqlCommand("INSERT INTO pessoa (nome, cpf, rg, dataNascimento, sexo, profissao, escolaridade) " +
                 "VALUES (@nome, @cpf, @rg, @dataNascimento, @sexo, @profissao, @escolaridade)", conn);
@@ -32,6 +33,32 @@ namespace Atividade.Model.DAO
             comando.Parameters.AddWithValue("@sexo", pessoa.Sexo);
             comando.Parameters.AddWithValue("@profissao", pessoa.Profissao);
             comando.Parameters.AddWithValue("@escolaridade", pessoa.Escolaridade);
+            comando.ExecuteNonQuery();
+            
+            conn.Close();
+        }
+
+        public int selecionarUltimoId()
+        {
+            int ultimoID;
+            var conn = connectionDb.GetConnection();
+            conn.Open();
+
+            var comando = new MySqlCommand("SELECT LAST_INSERT_ID()", conn);
+            comando.ExecuteNonQuery();
+            ultimoID = Convert.ToInt32(comando.ExecuteScalar());
+
+            conn.Close();
+
+            return ultimoID;
+        }
+
+        public void listaPessoa()
+        {
+            var conn = connectionDb.GetConnection();
+            conn.Open();
+
+            var comando = new MySqlCommand("SELECT * FROM pessoa");
             comando.ExecuteNonQuery();
 
             conn.Close();

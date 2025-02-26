@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -60,7 +61,9 @@ namespace Atividade.View
             } else
             {
                 controller.salvarDados();
-                controller.transformaJson();
+                limpaTelaTelefone() ;
+                limparTabelaTelefone();
+                ((MainWindow)Application.Current.MainWindow).trocarTela("TELA1");
             }
         }
 
@@ -72,7 +75,7 @@ namespace Atividade.View
         private void btn_excluir_Click(object sender, RoutedEventArgs e)
         {
             controller.removerDadosTabela();
-        }//Rever
+        }
 
         private void txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -86,16 +89,25 @@ namespace Atividade.View
             {
                 string dados = Convert.ToString(dtg_TabelaTelefone.SelectedItem);
 
-                string[] recebeDados = dados.Split(';');
+                try
+                {
+                    string[] recebeDados = dados.Split(';');
 
 
-                txt_DDD.Text = recebeDados[0].Trim();
-                txt_NumeroTelefone.Text = recebeDados[1].Trim();
-                txt_Operadora.Text = recebeDados[2].Trim();
+                    txt_DDD.Text = recebeDados[0].Trim();
+                    txt_NumeroTelefone.Text = recebeDados[1].Trim();
+                    txt_Operadora.Text = recebeDados[2].Trim();
+
+                    controller.receberDadosTabelaTelefone(recebeDados[0], recebeDados[1], recebeDados[2]);
+
+                    btn_excluir.IsEnabled = true;
+                }
+                catch(IndexOutOfRangeException ex)
+                {
+                    MessageBox.Show("Escolha um linha que possua dados", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
                 
-                controller.receberDadosTabelaTelefone(recebeDados[0], recebeDados[1], recebeDados[2]);
-
-                btn_excluir.IsEnabled = true;
 
             }
         }
@@ -105,6 +117,11 @@ namespace Atividade.View
             txt_DDD.Text = "";
             txt_NumeroTelefone.Text = "";
             txt_Operadora.Text = "";
+        }
+
+        private void limparTabelaTelefone()
+        {
+            dtg_TabelaTelefone.ItemsSource = null;
         }
     }
 }

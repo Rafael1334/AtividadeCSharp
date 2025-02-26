@@ -24,7 +24,6 @@ namespace Atividade.View
     {
         Controller.Controller controller;
 
-
         private List<string> possiveisSexos = new List<string> { "Não Informar", "Masculino", "Feminino" };
         private List<string> possivelEscolaridade = new List<string> { "Não Informar", "Ensino Fundamental", "Ensino Médio", "Ensino Técnico", "Ensino Superior" };
 
@@ -73,6 +72,18 @@ namespace Atividade.View
         {
             var textBox = sender as TextBox;
             e.Handled = Regex.IsMatch(e.Text, "[^0-9]+");
+        }
+
+        public void limpaTelaInformacaoPessoa()
+        {
+            txt_Nome.Text = "";
+            txt_Cpf.Text = "";
+            txt_Rg.Text = "";
+            dtP_DtNascimento.Text = "";
+            cb_Sexo.SelectedIndex = 0;
+            txt_Profissao.Text = "";
+            cb_Escolaridade .SelectedIndex = 0;
+            txt_Idade.Text = "";
         }
     }
 }

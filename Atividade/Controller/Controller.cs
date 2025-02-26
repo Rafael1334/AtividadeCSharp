@@ -266,6 +266,7 @@ namespace Atividade.Controller
                 ultimoIdInt = pessoaDao.selecionarUltimoId();
                 enderecoDao.inserirEndereco(pessoa.getListEndereco, ultimoIdInt);
                 telefoneDao.inserirTelefone(pessoa.getListTelefone, ultimoIdInt);
+                transformaJson();
             }
             catch (MySqlException ex)
             {

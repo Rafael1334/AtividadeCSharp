@@ -52,7 +52,7 @@ namespace Atividade.View
             else
             {
                 controller.criaEndereco(logradouro, numero, complemento, bairro, cidade, estado);
-                limpaTelaEndereco();
+                limparTelaEndereco();
                 btn_proximo.IsEnabled = true;
             }
 
@@ -71,7 +71,8 @@ namespace Atividade.View
         private void btn_voltar_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)Application.Current.MainWindow).trocarTela("TELA1");
-            limpaTelaEndereco();
+            limparTelaEndereco();
+            limparTabelaEndereco();
         }
 
         private void txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -93,7 +94,6 @@ namespace Atividade.View
 
                 string[] recebeDados = dados.Split(';');
 
-
                 txt_Logradouro.Text = recebeDados[0].Trim();
                 txt_Numero.Text = recebeDados[1].Trim();
                 txt_Complemento.Text = recebeDados[2].Trim();
@@ -109,7 +109,7 @@ namespace Atividade.View
             }
         }
 
-        private void limpaTelaEndereco()
+        private void limparTelaEndereco()
         {
             txt_Logradouro.Text = "";
             txt_Complemento.Text = "";
@@ -119,10 +119,10 @@ namespace Atividade.View
             cb_Estado.SelectedIndex = 0;
         }
 
-        private void limpaTabelaEndereco()
+        private void limparTabelaEndereco()
         {
-
-        }// Fazer
+            dtg_TabelaEndereco.ItemsSource = null;
+        }
 
     }
 }

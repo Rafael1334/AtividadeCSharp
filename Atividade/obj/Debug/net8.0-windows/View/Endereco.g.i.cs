@@ -141,7 +141,7 @@ namespace Atividade.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Atividade;V1.0.0.0;component/view/endereco.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Atividade;component/view/endereco.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\Endereco.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

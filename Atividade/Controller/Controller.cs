@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,6 @@ namespace Atividade.Controller
         TelefoneDao telefoneDao = new TelefoneDao(connectionDb);
 
         private Pessoa pessoa;
-        private Endereco endereco;
-        private Telefone telefone;
 
         //Pessoa
 
@@ -168,7 +167,7 @@ namespace Atividade.Controller
             atualizaTablelaEndereco(pessoa.getListEndereco);
         }
 
-        private void atualizaTablelaEndereco(List<Endereco> lista)
+        private void atualizaTablelaEndereco(ObservableCollection<Endereco> lista)
         {
             var paginaAtual = ((MainWindow)Application.Current.MainWindow).Content;
 
@@ -178,10 +177,6 @@ namespace Atividade.Controller
             }
         } // Verificar a parte da tabela
 
-        public void receberDadosTabelaEndereco(string logradouro, string numero, string complemento, string bairro, string cidade, string estado)
-        {
-            endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, estado);
-        }
 
         //Telefone
 
@@ -214,7 +209,7 @@ namespace Atividade.Controller
             atualizaTablelaTelefone(pessoa.getListTelefone);
         }
 
-        private void atualizaTablelaTelefone(List<Telefone> lista)
+        private void atualizaTablelaTelefone(ObservableCollection<Telefone> lista)
         {
             var paginaAtual = ((MainWindow)Application.Current.MainWindow).Content;
 
@@ -224,15 +219,10 @@ namespace Atividade.Controller
             }
         } // Verificar a parte da tabela
 
-        public void receberDadosTabelaTelefone(string ddd, string numeroTelefone, string operadora)
-        {
-            telefone = new Telefone(ddd, numeroTelefone, operadora);
-        }
-
 
         //Geral
 
-        public bool listaVazia<T>(List<T> lista)
+        public bool listaVazia<T>(ObservableCollection<T> lista)
         {
             return lista == null || lista.Count == 0;
         }
@@ -246,7 +236,7 @@ namespace Atividade.Controller
             {
                 mensagemErro += "Endereço: Lista vazia\n";
             }
-
+        
             var telefoneVazio = listaVazia(pessoa.getListTelefone);
             if (telefoneVazio)
             {
@@ -275,19 +265,20 @@ namespace Atividade.Controller
 
         }
 
-        public void removerDadosTabela()
+        public void removerDadosTabela(int index)
         {
 
             var paginaAtual = ((MainWindow)Application.Current.MainWindow).Content;
 
             if (paginaAtual is View.Endereco)
             {
-                pessoa.removeItemEndereco(endereco);
+                
+                pessoa.removeItemEndereco(index);
             }
 
             if (paginaAtual is View.Telefone)
             {
-                pessoa.removeItemTelefone(telefone);
+                pessoa.removeItemTelefone(index);
             }
 
         }

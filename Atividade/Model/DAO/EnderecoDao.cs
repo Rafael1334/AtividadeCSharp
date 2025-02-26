@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace Atividade.Model.DAO
             this.connectionDb = connection;
         }
 
-        public void inserirEndereco(List<Endereco> listEndereco, int id)
+        public void inserirEndereco(ObservableCollection<Endereco> listEndereco, int id)
         {
             var conn = connectionDb.GetConnection();
 

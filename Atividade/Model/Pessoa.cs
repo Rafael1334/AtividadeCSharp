@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,8 @@ namespace Atividade.Model
         private string sexo;
         private string profissao;
         private string escolaridade;
-        private List<Endereco> listEndereco;
-        private List<Telefone> listTelefone;
+        private ObservableCollection<Endereco> listEndereco;
+        private ObservableCollection<Telefone> listTelefone;
 
         public Pessoa() { }
 
@@ -31,8 +32,8 @@ namespace Atividade.Model
             this.sexo = sexo;
             this.profissao = profissao;
             this.escolaridade = escolaridade;
-            listEndereco = new List<Endereco>();
-            listTelefone = new List<Telefone>();
+            listEndereco = new ObservableCollection<Endereco>();
+            listTelefone = new ObservableCollection<Telefone>();
 
         }
 
@@ -49,32 +50,25 @@ namespace Atividade.Model
             listEndereco.Add(endereco);
         }
 
-        public void removeItemEndereco(Endereco removeEndereco)
+        public void removeItemEndereco(int index)
         {
-            listEndereco.RemoveAll(
-                end => end.Logradouro == removeEndereco.Logradouro &&
-                end.Complemento == removeEndereco.Complemento &&
-                end.Bairro == removeEndereco.Bairro &&
-                end.Cidade == removeEndereco.Cidade &&
-                end.Numero == removeEndereco.Numero &&
-                end.Estado == removeEndereco.Estado);
+            listEndereco.RemoveAt(index);
         }
 
-        public List<Endereco> getListEndereco { get => listEndereco; }
+        public ObservableCollection<Endereco> getListEndereco { get => listEndereco; }
 
         public void addItemTelefone(Telefone telefone)
         {
             listTelefone.Add(telefone);
         }
 
-        public void removeItemTelefone(Telefone removeTelefone)
+        public void removeItemTelefone(int index)
         {
-            listTelefone.RemoveAll(tel => tel.Ddd == removeTelefone.Ddd &&
-                tel.TelefoneCelular == removeTelefone.TelefoneCelular &&
-                tel.Operadora == removeTelefone.Operadora);
+
+            listTelefone.RemoveAt(index);
         }
 
-        public List<Telefone> getListTelefone { get => listTelefone; }
+        public ObservableCollection<Telefone> getListTelefone { get => listTelefone; }
 
         public override string ToString()
         {

@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\view\\endereco.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\view\\endereco.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\controller\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\controller\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\view\\telefone.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\view\\telefone.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\view\\informacaopessoal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\view\\informacaopessoal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\view\\endereco.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\view\\endereco.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\controller\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\controller\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|e:\\1estudo\\exercicio4secglobal\\atividade\\atividade\\model\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41EE6E7F-FFCA-454F-9211-F55F076C96B5}|Atividade\\Atividade.csproj|solutionrelative:atividade\\model\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +30,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Controller.cs",
               "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Controller\\Controller.cs",
               "RelativeDocumentMoniker": "Atividade\\Controller\\Controller.cs",
               "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Controller\\Controller.cs",
               "RelativeToolTip": "Atividade\\Controller\\Controller.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAABAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAALEAAAAAAAAAAADwv9kAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T23:12:00.532Z",
               "IsPinned": true,
@@ -44,44 +48,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InformacaoPessoal.xaml.cs",
-              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\InformacaoPessoal.xaml.cs",
-              "RelativeDocumentMoniker": "Atividade\\View\\InformacaoPessoal.xaml.cs",
-              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\InformacaoPessoal.xaml.cs",
-              "RelativeToolTip": "Atividade\\View\\InformacaoPessoal.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Pessoa.cs",
+              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Model\\Pessoa.cs",
+              "RelativeDocumentMoniker": "Atividade\\Model\\Pessoa.cs",
+              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\Model\\Pessoa.cs",
+              "RelativeToolTip": "Atividade\\Model\\Pessoa.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAvwEMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T17:49:48.508Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Endereco.xaml.cs",
-              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\Endereco.xaml.cs",
-              "RelativeDocumentMoniker": "Atividade\\View\\Endereco.xaml.cs",
-              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\Endereco.xaml.cs",
-              "RelativeToolTip": "Atividade\\View\\Endereco.xaml.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAQwEAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T12:01:54.412Z",
+              "WhenOpened": "2025-02-26T19:52:42.697Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Atividade\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Atividade\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwCkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T20:34:23.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Telefone.xaml.cs",
               "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\Telefone.xaml.cs",
               "RelativeDocumentMoniker": "Atividade\\View\\Telefone.xaml.cs",
               "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\Telefone.xaml.cs",
               "RelativeToolTip": "Atividade\\View\\Telefone.xaml.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowHwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAAAEsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T17:05:34.48Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-02-26T20:27:38.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Endereco.xaml.cs",
+              "DocumentMoniker": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\Endereco.xaml.cs",
+              "RelativeDocumentMoniker": "Atividade\\View\\Endereco.xaml.cs",
+              "ToolTip": "E:\\1ESTUDO\\Exercicio4SecGlobal\\Atividade\\Atividade\\View\\Endereco.xaml.cs",
+              "RelativeToolTip": "Atividade\\View\\Endereco.xaml.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAgwHgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T20:20:48.924Z",
               "EditorCaption": ""
             }
           ]

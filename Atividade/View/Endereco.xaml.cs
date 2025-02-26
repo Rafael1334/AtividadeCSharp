@@ -60,7 +60,8 @@ namespace Atividade.View
 
         private void btn_excluir_Click(object sender, RoutedEventArgs e)
         {
-            controller.removerDadosTabela();
+            int index = dtg_TabelaEndereco.SelectedIndex;
+            controller.removerDadosTabela(index);
         }
 
         private void btn_proximo_Click(object sender, RoutedEventArgs e)
@@ -91,7 +92,8 @@ namespace Atividade.View
             if (dtg_TabelaEndereco.SelectedItems.Count > 0)
             {
                 string dados = Convert.ToString(dtg_TabelaEndereco.SelectedItem);
-
+                int index = dtg_TabelaEndereco.SelectedIndex;
+                
                 string[] recebeDados = dados.Split(';');
 
                 txt_Logradouro.Text = recebeDados[0].Trim();
@@ -101,15 +103,12 @@ namespace Atividade.View
                 txt_Cidade.Text = recebeDados[4].Trim();
                 cb_Estado.SelectedItem = recebeDados[5].Trim();
 
-                controller.receberDadosTabelaEndereco(recebeDados[0], recebeDados[1], recebeDados[2], recebeDados[3], recebeDados[4], 
-                    recebeDados[5]);
-
                 btn_excluir.IsEnabled = true;
 
             }
         }
 
-        private void limparTelaEndereco()
+        public void limparTelaEndereco()
         {
             txt_Logradouro.Text = "";
             txt_Complemento.Text = "";
@@ -119,7 +118,7 @@ namespace Atividade.View
             cb_Estado.SelectedIndex = 0;
         }
 
-        private void limparTabelaEndereco()
+        public void limparTabelaEndereco()
         {
             dtg_TabelaEndereco.ItemsSource = null;
         }

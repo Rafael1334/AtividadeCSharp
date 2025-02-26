@@ -74,7 +74,8 @@ namespace Atividade.View
 
         private void btn_excluir_Click(object sender, RoutedEventArgs e)
         {
-            controller.removerDadosTabela();
+            int index = dtg_TabelaTelefone.SelectedIndex;
+            controller.removerDadosTabela(index);
         }
 
         private void txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -98,8 +99,6 @@ namespace Atividade.View
                     txt_NumeroTelefone.Text = recebeDados[1].Trim();
                     txt_Operadora.Text = recebeDados[2].Trim();
 
-                    controller.receberDadosTabelaTelefone(recebeDados[0], recebeDados[1], recebeDados[2]);
-
                     btn_excluir.IsEnabled = true;
                 }
                 catch(IndexOutOfRangeException ex)
@@ -112,14 +111,14 @@ namespace Atividade.View
             }
         }
 
-        private void limpaTelaTelefone()
+        public void limpaTelaTelefone()
         {
             txt_DDD.Text = "";
             txt_NumeroTelefone.Text = "";
             txt_Operadora.Text = "";
         }
 
-        private void limparTabelaTelefone()
+        public void limparTabelaTelefone()
         {
             dtg_TabelaTelefone.ItemsSource = null;
         }

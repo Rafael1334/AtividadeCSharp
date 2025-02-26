@@ -29,7 +29,7 @@ namespace Atividade
             controller = new Controller.Controller();
             pageInformacaoPessoa = new View.InformacaoPessoal(controller);
             pageEndereco = new View.Endereco(controller);
-            pageTelefone = new View.Telefone(controller);
+            pageTelefone = new View.Telefone(controller);      
 
             InitializeComponent();
             ((MainWindow)Application.Current.MainWindow).Content = pageInformacaoPessoa;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace Atividade.Model.DAO
             this.connectionDb = connection;
         }
 
-        public void inserirTelefone(List<Telefone> listTelefone, int id)
+        public void inserirTelefone(ObservableCollection<Telefone> listTelefone, int id)
         {
             var conn = connectionDb.GetConnection();
 

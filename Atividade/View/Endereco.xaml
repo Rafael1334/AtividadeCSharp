@@ -29,16 +29,8 @@
         <ComboBox Name="cb_Estado" HorizontalAlignment="Left" Margin="259,167,0,0" VerticalAlignment="Top" Width="175" SelectedIndex="0" ItemsSource="{Binding EstadosBrasileiros}"/>
 
         <DataGrid Name="dtg_TabelaEndereco"  Height="300" Width="400" Margin="470,67,0,0" VerticalAlignment="Top" 
-                  HorizontalAlignment="Left" AutoGenerateColumns="False" ItemsSource="{Binding AtualizaTabela}" SelectionChanged="dtg_TabelaEndereco_SelectionChanged">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Logradouro" Binding="{Binding Logradouro}"/>
-                <DataGridTextColumn Header="Número" Binding="{Binding Numero}"/>
-                <DataGridTextColumn Header="Complemento" Binding="{Binding Complemento}"/>
-                <DataGridTextColumn Header="Bairro" Binding="{Binding Bairro}"/>
-                <DataGridTextColumn Header="Cidade" Binding="{Binding Cidade}"/>
-                <DataGridTextColumn Header="Estado" Binding="{Binding Estado}"/>
-            </DataGrid.Columns>
-        </DataGrid>
+                  HorizontalAlignment="Left" AutoGenerateColumns="True" SelectionChanged="dtg_TabelaEndereco_SelectionChanged"
+                  CanUserAddRows="False" CanUserDeleteRows="True"/>
 
         <Button Name="btn_adicionarEndereco"  Content="Adicionar" HorizontalAlignment="Left" Margin="380,317,0,0" VerticalAlignment="Top" Click="btn_adicionarEndereco_Click"/>
 

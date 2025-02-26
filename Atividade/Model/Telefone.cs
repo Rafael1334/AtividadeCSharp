@@ -29,7 +29,7 @@ namespace Atividade.Model
 
         public override string ToString()
         {
-            return $"({Ddd}) {TelefoneCelular} - {Operadora}";
+            return $"{Ddd};{TelefoneCelular};{Operadora}";
         }
 
     }

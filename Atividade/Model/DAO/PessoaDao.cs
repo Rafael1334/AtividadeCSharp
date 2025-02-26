@@ -23,7 +23,6 @@ namespace Atividade.Model.DAO
 
             conn.Open();
            
-
             var comando = new MySqlCommand("INSERT INTO pessoa (nome, cpf, rg, dataNascimento, sexo, profissao, escolaridade) " +
                 "VALUES (@nome, @cpf, @rg, @dataNascimento, @sexo, @profissao, @escolaridade)", conn);
             comando.Parameters.AddWithValue("@nome", pessoa.Nome);

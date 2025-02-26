@@ -22,10 +22,8 @@ namespace Atividade.Controller
         TelefoneDao telefoneDao = new TelefoneDao(connectionDb);
 
         private Pessoa pessoa;
-        private Endereco removerEndereco;
-
-
-        private List<Pessoa> listPessoa;
+        private Endereco endereco;
+        private Telefone telefone;
 
         //Pessoa
 
@@ -175,12 +173,15 @@ namespace Atividade.Controller
             var paginaAtual = ((MainWindow)Application.Current.MainWindow).Content;
 
             if (paginaAtual is View.Endereco paginaEndereco)
-            {
+            {                
                 paginaEndereco.dtg_TabelaEndereco.ItemsSource = lista;
             }
         } // Verificar a parte da tabela
 
-
+        public void receberDadosTabelaEndereco(string logradouro, string numero, string complemento, string bairro, string cidade, string estado)
+        {
+            endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, estado);
+        }
 
         //Telefone
 
@@ -223,6 +224,10 @@ namespace Atividade.Controller
             }
         } // Verificar a parte da tabela
 
+        public void receberDadosTabelaTelefone(string ddd, string numeroTelefone, string operadora)
+        {
+            telefone = new Telefone(ddd, numeroTelefone, operadora);
+        }
 
 
         //Geral
@@ -251,7 +256,6 @@ namespace Atividade.Controller
             return mensagemErro;
         }
 
-
         public void salvarDados()
         {
             int ultimoIdInt;
@@ -270,14 +274,21 @@ namespace Atividade.Controller
 
         }
 
-        public void receberDadosTabelaEndereco(string logradouro, string numero, string complemento, string bairro, string cidade, string estado)
-        {
-            removerEndereco = new Endereco(logradouro, numero, complemento, bairro, cidade, estado); 
-        } 
-
         public void removerDadosTabela()
         {
-            pessoa.removeItemEndereco(removerEndereco);
+
+            var paginaAtual = ((MainWindow)Application.Current.MainWindow).Content;
+
+            if (paginaAtual is View.Endereco)
+            {
+                pessoa.removeItemEndereco(endereco);
+            }
+
+            if (paginaAtual is View.Telefone)
+            {
+                pessoa.removeItemTelefone(telefone);
+            }
+
         }
 
         public void transformaJson()

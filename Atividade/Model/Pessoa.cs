@@ -49,9 +49,15 @@ namespace Atividade.Model
             listEndereco.Add(endereco);
         }
 
-        public void removeItemEndereco(Endereco endereco)
+        public void removeItemEndereco(Endereco removeEndereco)
         {
-            listEndereco.Remove(endereco);
+            listEndereco.RemoveAll(
+                end => end.Logradouro == removeEndereco.Logradouro &&
+                end.Complemento == removeEndereco.Complemento &&
+                end.Bairro == removeEndereco.Bairro &&
+                end.Cidade == removeEndereco.Cidade &&
+                end.Numero == removeEndereco.Numero &&
+                end.Estado == removeEndereco.Estado);
         }
 
         public List<Endereco> getListEndereco { get => listEndereco; }
@@ -61,9 +67,11 @@ namespace Atividade.Model
             listTelefone.Add(telefone);
         }
 
-        public void RemoveItemTelefone(Telefone telefone)
+        public void removeItemTelefone(Telefone removeTelefone)
         {
-            listTelefone.Remove(telefone);
+            listTelefone.RemoveAll(tel => tel.Ddd == removeTelefone.Ddd &&
+                tel.TelefoneCelular == removeTelefone.TelefoneCelular &&
+                tel.Operadora == removeTelefone.Operadora);
         }
 
         public List<Telefone> getListTelefone { get => listTelefone; }
